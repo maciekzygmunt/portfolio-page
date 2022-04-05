@@ -76,10 +76,22 @@ const DesktopLinks = styled.div`
 
 const NormalLink = styled.div`
   cursor: pointer;
-  transition: text-decoration 150ms ease-out;
-  &:hover,
-  &:active {
-    text-decoration: underline;
+  position: relative;
+  &:after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: black;
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+  }
+  &:hover:after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
   }
 `;
 
