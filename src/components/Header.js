@@ -8,37 +8,47 @@ function Header() {
   const [opened, setOpened] = useState(false);
 
   return (
-    <Wrapper>
-      <LogoWrapper>
-        <Logo src={pic} />
-      </LogoWrapper>
-      <div>
-        <MobileLinks>
-          <Burger opened={opened} onClick={() => setOpened((o) => !o)} />
-        </MobileLinks>
-        <DesktopLinks>
+    <HeaderWrapper>
+      <Wrapper>
+        <LogoWrapper>
           <Link to="home" spy={true} smooth={true} offset={-90}>
-            <NormalLink>Home</NormalLink>
+            <Logo src={pic} />
           </Link>
-          <Link to="skills" spy={true} smooth={true}>
-            <NormalLink>Skills</NormalLink>
-          </Link>
-          <Link to="projects" spy={true} smooth={true}>
-            <NormalLink>Projects</NormalLink>
-          </Link>
-          <Link to="skills" spy={true} smooth={true}>
-            <ContactLink>Contact Me</ContactLink>
-          </Link>
-        </DesktopLinks>
-      </div>
-    </Wrapper>
+        </LogoWrapper>
+        <div>
+          <MobileLinks>
+            <Burger opened={opened} onClick={() => setOpened((o) => !o)} />
+          </MobileLinks>
+          <DesktopLinks>
+            <Link to="home" spy={true} smooth={true} offset={-90}>
+              <NormalLink>Home</NormalLink>
+            </Link>
+            <Link to="skills" spy={true} smooth={true}>
+              <NormalLink>Skills</NormalLink>
+            </Link>
+            <Link to="projects" spy={true} smooth={true}>
+              <NormalLink>Projects</NormalLink>
+            </Link>
+            <Link to="contactme" spy={true} smooth={true} offset={-500}>
+              <ContactLink>Contact Me</ContactLink>
+            </Link>
+          </DesktopLinks>
+        </div>
+      </Wrapper>
+    </HeaderWrapper>
   );
 }
 
+const HeaderWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+`;
+
 const Wrapper = styled.div`
-  position: sticky;
+  position: fixed;
   top: 0;
-  left: 0;
+  margin: 0 auto;
+  width: 100%;
   z-index: 50;
   height: 6rem;
   max-width: 75rem;
@@ -51,6 +61,7 @@ const Wrapper = styled.div`
 
 const LogoWrapper = styled.div`
   height: 3.2rem;
+  cursor: pointer;
 `;
 
 const Logo = styled.img`
@@ -58,7 +69,7 @@ const Logo = styled.img`
 `;
 
 const MobileLinks = styled.div`
-  @media (min-width: 40rem) {
+  @media (min-width: 41rem) {
     display: none;
   }
 `;
@@ -68,8 +79,9 @@ const DesktopLinks = styled.div`
   font-size: 1.5rem;
   font-weight: 500;
   align-items: center;
+  margin: 0 1rem;
   display: none;
-  @media (min-width: 40rem) {
+  @media (min-width: 41rem) {
     display: flex;
   }
 `;
