@@ -18,6 +18,33 @@ function Header() {
         <div>
           <MobileLinks>
             <Burger opened={opened} onClick={() => setOpened((o) => !o)} />
+            <Backdrop opened={opened} onClick={() => setOpened((o) => !o)} />
+            <MobileDrawer opened={opened}>
+              <Link
+                onClick={() => setOpened((o) => !o)}
+                to="home"
+                spy={true}
+                smooth={true}
+                offset={-90}
+              >
+                <NormalLink>Home</NormalLink>
+              </Link>
+              <Link onClick={() => setOpened((o) => !o)} to="skills" spy={true} smooth={true}>
+                <NormalLink>Skills</NormalLink>
+              </Link>
+              <Link onClick={() => setOpened((o) => !o)} to="projects" spy={true} smooth={true}>
+                <NormalLink>Projects</NormalLink>
+              </Link>
+              <Link
+                onClick={() => setOpened((o) => !o)}
+                to="contactme"
+                spy={true}
+                smooth={true}
+                offset={-500}
+              >
+                <ContactLink>Contact Me</ContactLink>
+              </Link>
+            </MobileDrawer>
           </MobileLinks>
           <DesktopLinks>
             <Link to="home" spy={true} smooth={true} offset={-90}>
@@ -49,7 +76,6 @@ const Wrapper = styled.div`
   top: 0;
   margin: 0 auto;
   width: 100%;
-  z-index: 50;
   height: 6rem;
   max-width: 75rem;
   margin: 0 auto;
@@ -57,11 +83,13 @@ const Wrapper = styled.div`
   align-items: center;
   justify-content: space-between;
   padding: 0 1.5rem;
+  z-index: 1;
 `;
 
 const LogoWrapper = styled.div`
   height: 3.2rem;
   cursor: pointer;
+  z-index: -4;
 `;
 
 const Logo = styled.img`
@@ -72,6 +100,38 @@ const MobileLinks = styled.div`
   @media (min-width: 41rem) {
     display: none;
   }
+`;
+
+const Backdrop = styled.div`
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  background: rgba(0, 0, 0, 0.41);
+  transition: display 150ms ease-out;
+  display: ${(props) => (props.opened ? 'block' : 'none')};
+  z-index: -2;
+`;
+
+const MobileDrawer = styled.div`
+  position: fixed;
+  background-color: #ffffff;
+  box-shadow: 0 0 10px #85888c;
+  height: 100vh;
+  top: 0;
+  right: 0;
+  width: 60vw;
+  z-index: -2;
+  transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
+  transform: ${(props) => (props.opened ? 'none' : 'translate(104%, 0)')};
+  font-size: 1.5rem;
+  font-weight: 500;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  row-gap: 1rem;
 `;
 
 const DesktopLinks = styled.div`

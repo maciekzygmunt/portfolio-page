@@ -74,7 +74,7 @@ const Link = styled.a`
   color: white;
   transition: color 150ms ease-out;
   &:hover {
-    color: #9ca3af;
+    color: #d1d5db;
   }
 `;
 
