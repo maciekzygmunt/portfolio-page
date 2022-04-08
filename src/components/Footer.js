@@ -67,6 +67,12 @@ const LinkElement = styled.div`
   display: flex;
   align-items: center;
   column-gap: 0.5rem;
+  @media (max-width: 28rem) {
+    font-size: 1.5rem;
+  }
+  @media (max-width: 22rem) {
+    font-size: 1.3rem;
+  }
 `;
 
 const Link = styled.a`
