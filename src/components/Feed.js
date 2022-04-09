@@ -15,6 +15,8 @@ import {
   ZoomIn,
   FadeOut,
 } from 'react-scroll-motion';
+import { projects } from '../projects';
+import ProjectItem from './ProjectItem';
 
 function Feed() {
   const ZoomInScrollOut = batch(StickyIn(), FadeIn(), ZoomIn());
@@ -70,14 +72,19 @@ function Feed() {
           </div>
         </ScrollPage>
         <ScrollPage page={4}>
-          <Animator animation={batch(FadeIn(), Sticky(), FadeOut())}>
-            <span style={{ fontSize: '40px' }}>Done</span>
-            <br />
-            <span style={{ fontSize: '30px' }}>
-              There's FadeAnimation, MoveAnimation, StickyAnimation, ZoomAnimation
-            </span>
-          </Animator>
+          <div id="projects">
+            <Animator animation={FadeUp}>
+              <span style={{ fontSize: '40px', whiteSpace: 'pre' }}>🛠️Projects:</span>
+            </Animator>
+          </div>
         </ScrollPage>
+        {projects.map((project, i) => (
+          <ScrollPage page={i + 5}>
+            <Animator animation={MoveIn(-1000, 0)}>
+              <ProjectItem key={project.id} project={project} />
+            </Animator>
+          </ScrollPage>
+        ))}
       </ScrollContainer>
       <div id="contactme">
         <Footer />

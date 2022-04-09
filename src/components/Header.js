@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import pic from '../assets/Logo-small.jpg';
+import pic from '../assets/logo.webp';
 import { Burger } from '@mantine/core';
 import { useState } from 'react';
 import { Link } from 'react-scroll';
@@ -12,7 +12,7 @@ function Header() {
       <Wrapper>
         <LogoWrapper>
           <Link to="home" spy={true} smooth={true} offset={-90}>
-            <Logo src={pic} />
+            <Logo alt="Maciej Zygmunt" src={pic} />
           </Link>
         </LogoWrapper>
         <div>
@@ -32,7 +32,13 @@ function Header() {
               <Link onClick={() => setOpened((o) => !o)} to="skills" spy={true} smooth={true}>
                 <NormalLink>Skills</NormalLink>
               </Link>
-              <Link onClick={() => setOpened((o) => !o)} to="projects" spy={true} smooth={true}>
+              <Link
+                onClick={() => setOpened((o) => !o)}
+                to="projects"
+                spy={true}
+                smooth={true}
+                offset={-10}
+              >
                 <NormalLink>Projects</NormalLink>
               </Link>
               <Link
@@ -53,7 +59,7 @@ function Header() {
             <Link to="skills" spy={true} smooth={true}>
               <NormalLink>Skills</NormalLink>
             </Link>
-            <Link to="projects" spy={true} smooth={true}>
+            <Link to="projects" spy={true} smooth={true} offset={-10}>
               <NormalLink>Projects</NormalLink>
             </Link>
             <Link to="contactme" spy={true} smooth={true} offset={-500}>
@@ -84,6 +90,8 @@ const Wrapper = styled.div`
   justify-content: space-between;
   padding: 0 1.5rem;
   z-index: 1;
+  background-color: white;
+  box-shadow: 8px 8px 49px 3px rgba(255, 255, 255, 1);
 `;
 
 const LogoWrapper = styled.div`
@@ -94,6 +102,7 @@ const LogoWrapper = styled.div`
 
 const Logo = styled.img`
   height: 100%;
+  width: 100%;
 `;
 
 const MobileLinks = styled.div`
@@ -178,6 +187,7 @@ const ContactLink = styled.div`
   justify-content: center;
   border-radius: 11px;
   transition: color 200ms ease-out, background-color 200ms ease-out;
+  text-decoration: none;
   &:hover,
   &:active {
     background-color: white;
