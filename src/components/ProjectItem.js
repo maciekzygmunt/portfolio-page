@@ -25,6 +25,9 @@ const Wrapper = styled.div`
   box-shadow: 0px 0px 5px 3px #00000040;
   margin: 0.5rem auto;
   margin-top: 15rem;
+  @media (max-height: 850px) and (min-width: 500px) {
+    margin-top: 10rem;
+  }
   border-radius: 11px;
   width: 90vw;
   padding: 1rem;
@@ -41,6 +44,12 @@ const Name = styled.div`
 const ImageWrapper = styled.div`
   width: 80vw;
   max-width: 620px;
+  @media (max-height: 770px) {
+    max-width: 40vw;
+  }
+  @media (max-height: 700px) {
+    max-width: 30vw;
+  }
 `;
 
 const Image = styled.img`

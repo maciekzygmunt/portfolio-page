@@ -98,6 +98,8 @@ const LogoWrapper = styled.div`
   height: 3.2rem;
   cursor: pointer;
   z-index: -4;
+  flex-grow: 0;
+  flex-shrink: 0;
 `;
 
 const Logo = styled.img`
