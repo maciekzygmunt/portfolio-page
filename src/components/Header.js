@@ -104,7 +104,7 @@ const LogoWrapper = styled.div`
 
 const Logo = styled.img`
   height: 100%;
-  width: 100%;
+  max-width: 100%;
 `;
 
 const MobileLinks = styled.div`
@@ -142,11 +142,9 @@ const MobileDrawer = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  row-gap: 1rem;
 `;
 
 const DesktopLinks = styled.div`
-  column-gap: 2rem;
   font-size: 1.5rem;
   font-weight: 500;
   align-items: center;
@@ -160,6 +158,7 @@ const DesktopLinks = styled.div`
 const NormalLink = styled.div`
   cursor: pointer;
   position: relative;
+  margin-right: 2rem;
   &:after {
     content: '';
     position: absolute;
@@ -175,6 +174,9 @@ const NormalLink = styled.div`
   &:hover:after {
     transform: scaleX(1);
     transform-origin: bottom left;
+  }
+  @media (max-width: 41rem) {
+    margin: 1rem 0 0 0;
   }
 `;
 
@@ -195,6 +197,9 @@ const ContactLink = styled.div`
     background-color: white;
     color: black;
     border: 2px solid black;
+  }
+  @media (max-width: 41rem) {
+    margin: 1rem 0 0 0;
   }
 `;
 
