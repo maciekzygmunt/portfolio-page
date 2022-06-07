@@ -7,9 +7,11 @@ function ProjectItem({ project }) {
       <ImageWrapper>
         <Image src={project.photo} />
       </ImageWrapper>
-      <Link href={project.repo} target="_blank">
-        Github Repo
-      </Link>
+      {project.repo && (
+        <Link href={project.repo} target="_blank">
+          Github Repo
+        </Link>
+      )}
       <Link href={project.demo} target="_blank">
         Demo
       </Link>
