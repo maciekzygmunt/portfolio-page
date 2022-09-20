@@ -7,7 +7,7 @@ import {
   BrandTelegram,
   BrandInstagram,
 } from 'tabler-icons-react';
-import CV from '../assets/Maciej_Zygmunt_CV.pdf';
+import CV from '../assets/Maciej_Zygmunt_Resume.pdf';
 
 function Footer() {
   return (

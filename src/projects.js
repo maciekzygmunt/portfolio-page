@@ -1,25 +1,26 @@
 export const projects = [
   {
     id: 1,
+    name: 'Froose',
+    photo: 'https://i.ibb.co/zbx0c76/6.png',
+    repo: 'https://github.com/maciekzygmunt/froose',
+    demo: 'https://froose.vercel.app/',
+  },
+  {
+    id: 2,
     name: 'BitCloud',
     photo: 'https://i.ibb.co/qFbDfwV/image1-1.jpg',
     repo: '',
     demo: 'https://www.bitcloud.space/',
   },
   {
-    id: 2,
+    id: 3,
     name: 'PokeDex',
     photo: 'https://i.ibb.co/pxPyQXp/image1.jpg',
     repo: 'https://github.com/maciekzygmunt/pokedex-app',
     demo: 'https://pokedex-app-gamma-six.vercel.app',
   },
-  {
-    id: 3,
-    name: 'Todo app',
-    photo: 'https://i.ibb.co/PzJHt41/image2.jpg',
-    repo: 'https://github.com/maciekzygmunt/todo-app',
-    demo: 'https://todo-app-ten-alpha.vercel.app',
-  },
+
   {
     id: 4,
     name: 'Instagram clone',

@@ -13,6 +13,7 @@ import {
   StickyIn,
   ZoomIn,
 } from 'react-scroll-motion';
+
 import { projects } from '../projects';
 
 const ProjectItem = React.lazy(() => import('./ProjectItem.js'));
@@ -52,6 +53,7 @@ function Feed() {
                 justifyContent: 'center',
                 alignItems: 'center',
                 height: '100%',
+                marginTop: '3.5rem',
               }}
             >
               <span
@@ -62,13 +64,18 @@ function Feed() {
                   alignItems: 'center',
                 }}
               >
-                <Animator animation={MoveIn(-1000, 0)}>HTML5</Animator>
-                <Animator animation={MoveIn(1000, 0)}>CSS3</Animator>
-                <Animator animation={MoveIn(-1000, 0)}>React.js</Animator>
+                <Animator animation={MoveIn(-1000, 0)}>JavaScript</Animator>
+                <Animator animation={MoveIn(1000, 0)}>TypeScript</Animator>
+                <Animator animation={MoveIn(-1000, 0)}>React</Animator>
+                <Animator animation={MoveIn(1000, 0)}>Next.js</Animator>
+                <Animator animation={MoveIn(-1000, 0)}>Tailwindcss</Animator>
                 <Animator animation={MoveIn(1000, 0)}>Redux</Animator>
-                <Animator animation={MoveIn(-1000, 0)}>React Router</Animator>
-                <Animator animation={MoveIn(1000, 0)}>Styled Components</Animator>
+                <Animator animation={MoveIn(-1000, 0)}>Node.js</Animator>
+                <Animator animation={MoveIn(1000, 0)}>Express.js</Animator>
+                <Animator animation={MoveIn(-1000, 0)}>MongoDB</Animator>
+                <Animator animation={MoveIn(1000, 0)}>GraphQL</Animator>
                 <Animator animation={MoveIn(-1000, 0)}>Git</Animator>
+                <Animator animation={MoveIn(1000, 0)}>Docker</Animator>
               </span>
             </div>
           </ScrollPage>
