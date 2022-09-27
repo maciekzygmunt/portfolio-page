@@ -2,7 +2,7 @@ export const projects = [
   {
     id: 1,
     name: 'Froose',
-    photo: 'https://i.ibb.co/zbx0c76/6.png',
+    photo: 'https://i.ibb.co/4N6CtGP/6-2-1.png',
     repo: 'https://github.com/maciekzygmunt/froose',
     demo: 'https://froose.vercel.app/',
   },
